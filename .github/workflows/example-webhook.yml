@@ -4,17 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    
-    - name: On my_custom_webhook do ABC...
-      if: github.event.action == 'my_custom_webhook'
-      run: |
-        echo "Hello From my_custom_webhook...doing ABC" 
-      if: github.event.client_payload.url == 'testing'
-      run: |
-        echo "Hello with correct client payload" 
-        
-    - name: On my_custom_webhook do XYZ...
-      if: github.event.action == 'my_custom_webhook_2'
-      run: |
-        echo "Hello From my_custom_webhook_2...doing XYZ"
+      - uses: actions/checkout@v1
+
+      - name: On my_custom_webhook do ABC...
+        if: github.event.client_payload.url == 'testing'
+        run: |
+          echo "Hello From my_custom_webhook...doing ABC" 
+
+      - name: On my_custom_webhook do XYZ...
+        if: github.event.action == 'my_custom_webhook_2'
+        run: |
+          echo "Hello From my_custom_webhook_2...doing XYZ"
