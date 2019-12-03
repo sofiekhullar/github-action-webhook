@@ -9,7 +9,7 @@ jobs:
     - name: On my_custom_webhook do ABC...
       if: github.event.action == 'my_custom_webhook'
       run: |
-        echo ${github.event.client_payload.url} 
+        echo $(github.event.client_payload.url) 
         
     - name: On my_custom_webhook do XYZ...
       if: github.event.action == 'my_custom_webhook_2'
