@@ -12,6 +12,9 @@ jobs:
         if: github.event.client_payload.url == 'testing'
         run: |
           echo "Hello From my_custom_webhook...doing ABC" 
+        -name: Testing after if
+        run: |
+          echo "Hello From testing"
 
       - name: On my_custom_webhook do XYZ...
         if: github.event.action == 'my_custom_webhook_2'
