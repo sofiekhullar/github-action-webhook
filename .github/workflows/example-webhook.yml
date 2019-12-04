@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         run: | 
           echo $github.event.client_payload.branch
-          git checkout ${github.event.client_payload.branch}
+          git checkout test
 
       - name: On my_custom_webhook step 1...
         if: github.event.client_payload.url == 'testing'
