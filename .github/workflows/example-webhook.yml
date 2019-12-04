@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v1
 
       env:
-        DEPLOY_PRIME_URL= ${{ github.event.client_payload.url }}
+        DEPLOY_PRIME_URL: ${{ github.event.client_payload.url }}
 
       - name: On my_custom_webhook do ABC...
         if: github.event.client_payload.url == 'testing'
