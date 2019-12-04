@@ -7,9 +7,9 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: On my_custom_webhook step 1...
+        if: github.event.client_payload.url == 'testing'
         env:
           DEPLOY_PRIME_URL: ${{ github.event.client_payload.url }}
-        if: github.event.client_payload.url == 'testing'
         run: |
           echo "Hello From my_custom_webhook.." 
           echo $DEPLOY_PRIME_URL
