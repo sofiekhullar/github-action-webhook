@@ -13,6 +13,7 @@ jobs:
         run: |
           echo "Hello From my_custom_webhook.." 
           echo $DEPLOY_PRIME_URL
+          echo $github.event.client_payload.url
 
       - name: On my_custom_webhook step2...
         env:
