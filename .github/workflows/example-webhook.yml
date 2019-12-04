@@ -21,6 +21,7 @@ jobs:
         run: |
           echo "Hello From my_custom_webhook NR 2..." 
           echo $DEPLOY_PRIME_URL
+          echo ${{ github.ref }}
 
       - name: On my_custom_webhook do XYZ...
         if: github.event.action == 'my_custom_webhook_2'
