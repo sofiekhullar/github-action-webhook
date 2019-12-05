@@ -4,10 +4,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout
-      uses: actions/checkout@v2-beta
-      with:
-        ref: test
+      - name: Checkout
+        uses: actions/checkout@v2-beta
+        with:
+          ref: test
 
       - name: On my_custom_webhook step 1...
         if: github.event.client_payload.url == 'testing'
