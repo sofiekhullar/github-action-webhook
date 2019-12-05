@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2-beta
         with:
-          ref: test
+          ref: $github.event.client_payload.branch
 
       - name: On my_custom_webhook step 1...
         if: github.event.client_payload.url == 'testing'
