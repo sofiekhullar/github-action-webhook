@@ -4,10 +4,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo
-        run: |
-          echo $github.event.client_payload.branch
-
       -name: Checkout
         uses: sofiekhullar/github-action-webhook@test
 
