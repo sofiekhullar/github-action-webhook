@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Echo
         run: |
-          echo ${{ github.event.client_payload.branch }}
+          echo $github.event.client_payload.branch
 
       -name: Checkout
         uses: sofiekhullar/github-action-webhook@test
