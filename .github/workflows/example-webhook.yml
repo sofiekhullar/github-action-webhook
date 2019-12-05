@@ -4,10 +4,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        run: | 
-          echo $github.event.client_payload.branch
-          git checkout test
+      - name: Echo
+        run: |
+          echo ${{ github.event.client_payload.branch }}
+
+      -name: Checkout
+        uses: sofiekhullar/github-action-webhook@test
 
       - name: On my_custom_webhook step 1...
         if: github.event.client_payload.url == 'testing'
